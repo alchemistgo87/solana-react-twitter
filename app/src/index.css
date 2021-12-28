@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.wallet-adapter-dropdown {
+  @apply w-full;
+}
+
+.wallet-adapter-button {
+  @apply rounded-full w-full;
+}
+
+.wallet-adapter-button-trigger {
+  @apply bg-primary-light justify-center !important;
+}
+
+.wallet-adapter-dropdown-list {
+  @apply top-auto bottom-full md:top-full md:bottom-auto md:left-0 md:right-auto;
+}
+
+.wallet-adapter-dropdown-list-active {
+  @apply transform -translate-y-3 md:translate-y-3;
+}
