@@ -2,7 +2,7 @@ import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { createContext, useMemo } from "react";
 import { Provider, Program } from "@project-serum/anchor";
-import idl from "../idl/solana_twitter.json";
+import idl from "../idl.json";
 
 export const WorkspaceContext = createContext();
 const preflightCommitment = "processed";
