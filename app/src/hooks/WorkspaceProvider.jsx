@@ -5,17 +5,15 @@ import { Provider, Program } from "@project-serum/anchor";
 import idl from "../idl/solana_twitter.json";
 
 export const WorkspaceContext = createContext();
+const preflightCommitment = "processed";
+const commitment = "processed";
+const programID = new PublicKey(idl.metadata.address);
+//const connection = new Connection("http://127.0.0.1:8899", commitment);
+const connection = new Connection("https://api.devnet.solana.com", commitment);
 
 export function WorkspaceProvider(props) {
-  const preflightCommitment = "processed";
-  const commitment = "processed";
-  const programID = new PublicKey(idl.metadata.address);
   const wallet = useAnchorWallet();
-  //const connection = new Connection("http://127.0.0.1:8899", commitment);
-  const connection = new Connection(
-    "https://api.devnet.solana.com",
-    commitment
-  );
+
   const provider = useMemo(() => {
     return new Provider(connection, wallet, {
       preflightCommitment,

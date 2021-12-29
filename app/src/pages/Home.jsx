@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchTweets } from "../api/fetch-tweets";
 import TweetForm from "../components/TweetForm";
 import TweetList from "../components/TweetList";
