@@ -22,6 +22,9 @@ export function WorkspaceProvider(props) {
   }, [wallet]);
 
   const program = useMemo(() => {
+    console.log("Idl: ", idl);
+    console.log("ProgramId:", programID.toBase58());
+    console.log("Provider:", provider);
     return new Program(idl, programID, provider);
   }, [provider]);
 
