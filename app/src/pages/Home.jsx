@@ -9,7 +9,13 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
   const addTweet = (tweet) => setTweets([...tweets, tweet]);
   const workspace = useContext(WorkspaceContext);
-
+  const removeTweet = (deletedTweet) =>
+    setTweets(
+      tweets.filter(
+        (tweet) =>
+          tweet.publicKey.toBase58() !== deletedTweet.publicKey.toBase58()
+      )
+    );
   useEffect(() => {
     fetchTweets(workspace)
       .then((fetchedTweets) => setTweets(fetchedTweets))
@@ -19,7 +25,11 @@ export const Home = () => {
   return (
     <div>
       <TweetForm added={addTweet}></TweetForm>
-      <TweetList tweets={tweets} loading={loading}></TweetList>
+      <TweetList
+        remove={removeTweet}
+        tweets={tweets}
+        loading={loading}
+      ></TweetList>
     </div>
   );
 };
